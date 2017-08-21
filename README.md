@@ -22,6 +22,7 @@ Demo scene shows capture from camera, and screen share, from webrtc video captur
 - [ ] Get a simple video call POC in Unity
 - [ ] Clean up code
 - [ ] Create an abstracted WebRTC API for Unity, that can be implemented for each platform
+- [ ] Get rid of the hacky `setUnityContext` to get the graphics context, and actually use the Low-level Native Plugin Interface
 - [ ] Support for iOS within the same API
 - [ ] Support for WebGL (jslib plugin + polyfill maybe)
 - [ ] Support for Standalone (Windows, OS X, Linux)

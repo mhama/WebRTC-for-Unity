@@ -34,27 +34,3 @@ dependencies {
     compile files('libs/libjingle_peerconnection.jar')
     testCompile 'junit:junit:4.12'
 }
-
-task copyDebugAarToUnity {
-    delete '../../Assets/WebRTCForUnity/WebRTC/Plugins/Android/webrtc-debug.aar'
-    delete '../../Assets/WebRTCForUnity/WebRTC/Plugins/Android/webrtc-debug.aar.meta'
-    delete '../../Assets/WebRTCForUnity/WebRTC/Plugins/Android/webrtc-release.aar'
-    delete '../../Assets/WebRTCForUnity/WebRTC/Plugins/Android/webrtc-release.aar.meta'
-    copy {
-        from('build/outputs/aar/webrtc-debug.aar')
-        into('../../Assets/WebRTCForUnity/WebRTC/Plugins/Android/')
-    }
-}
-
-task copyReleaseAarToUnity {
-    delete '../../Assets/WebRTCForUnity/WebRTC/Plugins/Android/webrtc-debug.aar'
-    delete '../../Assets/WebRTCForUnity/WebRTC/Plugins/Android/webrtc-debug.aar.meta'
-    delete '../../Assets/WebRTCForUnity/WebRTC/Plugins/Android/webrtc-release.aar'
-    delete '../../Assets/WebRTCForUnity/WebRTC/Plugins/Android/webrtc-release.aar.meta'
-    copy {
-        from('build/outputs/aar/webrtc-release.aar')
-        into('../../Assets/WebRTCForUnity/WebRTC/Plugins/Android/')
-    }
-}
-
-assemble.finalizedBy copyDebugAarToUnity

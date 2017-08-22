@@ -19,8 +19,8 @@ public class WebrtcBuild : EditorWindow {
 
 		if (GUILayout.Button("Rebuild WebRTC library", GUILayout.MinWidth(110)))
 		{
-			GradleBuild ();
-		}
+            BuildAarAndCopy();
+        }
 
 		EditorGUILayout.PrefixLabel ("SocketIO");
 
@@ -44,13 +44,27 @@ public class WebrtcBuild : EditorWindow {
 	}
 
 
-	public static bool GradleBuild() {
+    public static void BuildAarAndCopy()
+    {
+        if (GradleBuild())
+        {
+            string aarFile = System.IO.Path.GetFullPath("./webrtc-android/webrtc/build/outputs/aar/webrtc-release.aar");
+            string oldAarFile = System.IO.Path.GetFullPath("./Assets/WebRTCForUnity/WebRTC/Plugins/Android/webrtc-release.aar");
+            if (!System.IO.File.Exists(aarFile))
+            {
+                Debug.LogError("Aar file wasn't built");
+            }
+            System.IO.File.Copy(aarFile, oldAarFile, true);
+        }
+    }
+
+    public static bool GradleBuild() {
 		string androidLocation = System.IO.Path.GetFullPath("./webrtc-android/");
 		if (System.IO.Directory.Exists(androidLocation))
 		{
 			System.Diagnostics.Process gradle = new System.Diagnostics.Process();
 			gradle.StartInfo.FileName = "gradlew";
-			gradle.StartInfo.Arguments = "assembleRelease";
+			gradle.StartInfo.Arguments = "webrtc:assembleRelease";
 			gradle.StartInfo.WorkingDirectory = androidLocation;
 			//TODO: hook stdout to unity console
 			if (gradle.Start())
@@ -59,18 +73,18 @@ public class WebrtcBuild : EditorWindow {
 				{
 					if(gradle.ExitCode != 0)
 					{
-						Debug.Log("gradle exit: " + gradle.ExitCode);
+						Debug.LogError("gradle exit: " + gradle.ExitCode);
 					}
 					return gradle.ExitCode == 0;
 				}
 				try
 				{
 					gradle.Kill();
-					Debug.Log("gradle timeout:" + gradle.ExitCode);
+                    Debug.LogError("gradle timeout:" + gradle.ExitCode);
 					return gradle.ExitCode == 0;
 				}
 				catch (Exception ex){
-					Debug.Log("gradle error:" + ex.Message);
+                    Debug.LogError("gradle error:" + ex.Message);
 					return false;
 				}
 			}

@@ -31,7 +31,14 @@ Demo scene shows capture from camera, and screen share, from webrtc video captur
 
 ## Resources:
 The official webrtc repo contains a unity plugin example, which is worth investigating.
+
 https://chromium.googlesource.com/external/webrtc.git/+/master/webrtc/examples/unityplugin/
+
+Used without hardware acceleration, it could be used in conjunction with techniques from
+
+https://bitbucket.org/Unity-Technologies/graphicsdemos
+
+To render data directly to the texture created in Unity.
 
 ## Contribution:
 Yes, please. If you think you can contribute to any of the points above, or have any suggestions, design thoughts, use cases, anything really, go ahead and open an issue and/or create a pull request.

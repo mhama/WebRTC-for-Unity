@@ -47,7 +47,7 @@ RenderAPI* CreateRenderAPI_OpenGLCoreES(UnityGfxRenderer apiType)
  void RenderAPI_OpenGLCoreES::CreateResources()
 {
 #	if SUPPORT_OPENGL_CORE
-	else if (m_APIType == kUnityGfxRendererOpenGLCore)
+	if (m_APIType == kUnityGfxRendererOpenGLCore)
 	{
 		glewExperimental = GL_TRUE;
 		glewInit();

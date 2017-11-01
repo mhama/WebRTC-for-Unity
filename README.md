@@ -1,3 +1,5 @@
+##### disclaimer: this repo is not under active development. It was an experiment, which wasn't going in the right direction, but nonetheless, it was good learning material to me. I will restart this project in the - near or far - future when I get the time. 
+
 # WebRTC-for-Unity (WIP, In development)
 WebRTC for Unity (WIP, In development)
 This repo aims to facilitate WebRTC development in Unity, and maybe have a unifed API that behaves the same on different platforms.

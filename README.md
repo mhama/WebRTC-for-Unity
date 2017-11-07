@@ -34,7 +34,7 @@ Demo scene shows capture from camera, and screen share, from webrtc video captur
 ## Resources:
 The official webrtc repo contains a unity plugin example, which is worth investigating.
 
-https://chromium.googlesource.com/external/webrtc.git/+/master/webrtc/examples/unityplugin/
+https://chromium.googlesource.com/external/webrtc.git/+/master/examples/unityplugin/
 
 Used without hardware acceleration, it could be used in conjunction with techniques from
 

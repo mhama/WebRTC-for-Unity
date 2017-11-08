@@ -16,15 +16,24 @@ MonoBehaviour:
   BuildNumber: 1
   includePluginAPI: 1
   buildOptions:
-  - Architecture: 5
-    BuildType: 0
-    BuildPlatform: 5
+  - Architecture: 1
+    BuildType: 2
+    BuildPlatform: 1
     AndroidSdkVersion: 0
     isEnabled: 1
     foldoutAnimator:
-      m_Target: 0
+      m_Target: 1
       speed: 2
-      m_Value: 0
+      m_Value: 1
+  - Architecture: 4
+    BuildType: 2
+    BuildPlatform: 5
+    AndroidSdkVersion: 0
+    isEnabled: 0
+    foldoutAnimator:
+      m_Target: 1
+      speed: 2
+      m_Value: 1
   Definitions:
     keys: []
     values: []
@@ -33,6 +42,6 @@ MonoBehaviour:
   sourceFolder: C:\Users\bhadriche\Desktop\WebRTC-Native\Assets\WebRTC\NativeSource~\Source
   buildFolder: C:\Users\bhadriche\Desktop\WebRTC-Native\Assets\WebRTC\NativeSource~\Build
   sectionAnimator:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1

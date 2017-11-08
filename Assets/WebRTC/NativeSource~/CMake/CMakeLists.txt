@@ -26,11 +26,15 @@ if(DEFINED INCLUDE_PLUGIN_API)
   include_directories(${INCLUDE_PLUGIN_API})
 endif()
 
+#WebRTC include
+include_directories("${SOURCE_FOLDER}/../Lib/Headers")
+
 # Find all .c, .cc and .cpp files in the source folder
 file(GLOB_RECURSE SOURCE_FILES "${SOURCE_FOLDER}/*.c" "${SOURCE_FOLDER}/*.cc" "${SOURCE_FOLDER}/*.cpp")
 
 if(ANDROID)
   add_library(${PLUGIN_NAME} SHARED ${SOURCE_FILES})
+  target_link_libraries(${PLUGIN_NAME} "${SOURCE_FOLDER}/../Lib/Android/jni/${ANDROID_ABI}/libjingle_peerconnection_so.so")
   install(TARGETS ${PLUGIN_NAME} DESTINATION ${PLUGIN_BINARY_FOLDER}/Android/${ANDROID_ABI})
 elseif(IOS)
   set (CMAKE_IOS_INSTALL_UNIVERSAL_LIBS ON)

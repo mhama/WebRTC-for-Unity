@@ -15,6 +15,27 @@ Demo scene shows capture from camera, and screen share, from webrtc video captur
 
 <img src="https://dl2.pushbulletusercontent.com/Xj8v2Wliajvr8PYRvIdKS2Yu7PlqT2PP/Screenshot_20170816-145027.png" width="500" />
 
+## Build:
+- Please ensure that Unity's normal Android build does not fail on your environment.
+- Select Android Target on Unity's Builds Setting dialog, and push "Build" or "Build And Run"
+
+### Gradle setting
+- If the build fails, please ensure that running webrtc-android/gradlew (Mac OS X) or webrtc-android/gradlew.bat (Windows) on command prompt or Terminal does not fail.
+- If it fails, maybe you need to specify android sdk directory.
+To specify android sdk directory to gradle, please create ./webrtc-android/local.properties file with below contents.
+
+```
+# Please set your Android SDK directory.
+# But do not use \ as delimiter, use / instead.
+sdk.dir=/Path/To/AndroidSDK
+
+# typical android sdk path on Windows
+#sdk.dir=C:/Users/YourUserName/AppData/Local/Android/Sdk
+
+# NDK directory. Setting blank is ok.
+ndk.dir=
+```
+
 ## Roadmap:
 - [x] Create an android plugin 
 - [x] Create an proxy to move I420 frames between the WebRTC and Unity (Textures)

@@ -47,24 +47,25 @@ ndk.dir=
 
 - Socket IO demo (actually WebRTC feature not implemented yet)
     - Requirements
-           - need to run the server to communicate with the app.
-           - To run the server, you need to install nodejs.
-           - There's several ways to install nodejs, but with Chocolatey on windows, `choco install nodejs` will do it.
-           - You need to run `npm install` to install required modules.
-             - With command line: Then you need to run `npm install` on the server directory `./Assets/WebRTCForUnity/Example/SocketIO/Server~` (this directory is hidden on Unity's file browser)
-             - With Unity GUI: 'Window' Menu-> 'WebRTC Build' -> 'npm install'
-             - Make sure that your target Android phone is on the same Network, like connecting to the same Wi-Fi access point.
+        - need to run the server to communicate with the app.
+        - To run the server, you need to install nodejs.
+        - There's several ways to install nodejs, but with Chocolatey on windows, `choco install nodejs` will do it.
+        - You need to run `npm install` to install required modules.
+            - With command line: Then you need to run `npm install` on the server directory `./Assets/WebRTCForUnity/Example/SocketIO/Server~` (this directory is hidden on Unity's file browser)
+            - With Unity GUI: 'Window' Menu-> 'WebRTC Build' -> 'npm install'
+            - Make sure that your target Android phone is on the same Network, like connecting to the same Wi-Fi access point.
     - Run Server
-           - With command line: run `node index.js` on the server directory `./Assets/WebRTCForUnity/Example/SocketIO/Server~`
-           - With Unity GUI: 'Window' Menu-> 'WebRTC Build' -> 'Run example server'
+        - With command line: run `node index.js` on the server directory `./Assets/WebRTCForUnity/Example/SocketIO/Server~`
+        - With Unity GUI: 'Window' Menu-> 'WebRTC Build' -> 'Run example server'
     - Configure client
-           - open scene `./Assets/WebRTCForUnity/Example/SocketIO/example.unity`
-           - Select `SocketIO` GameObject.
-           - On the property view, set `Server Url` as http://(YOUR PC's LOCAL IP ADDRESS):3000
-             - example: http://192.168.0.10:3000
-             - You need to check your PC's local IP address with network detail window on your OS.
+        - Open scene `./Assets/WebRTCForUnity/Example/SocketIO/example.unity`
+        - Select `SocketIO` GameObject.
+        - On the property view, set `Server Url` as http://(YOUR PC's LOCAL IP ADDRESS):3000
+            - example: http://192.168.0.10:3000
+            - You need to confirm your PC's local IP address with network settings on your OS.
     - Run App
-           - Build and run app.               
+        - Build and run app.
+
 ## Roadmap:
 - [x] Create an android plugin 
 - [x] Create an proxy to move I420 frames between the WebRTC and Unity (Textures)

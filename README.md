@@ -42,12 +42,14 @@ ndk.dir=
 ## Demos
 
 - Screen capture demo
-  - Tap 'Camera' button to show live view captured from the device's camera on 3D object's textures.
+  - Demo to show live texture with WebRTC's capturing functionality. No networking involved.
+  - Tap 'Camera' button to show live view captured from the device's camera on 3D objects' textures.
   - Tap 'Screen Capture' button to show live screen capture on 3D Objects' textures.
 
-- Socket IO demo (actually WebRTC feature not implemented yet)
+- Socket IO demo (actually WebRTC feature is not implemented yet)
+    - Currently this is just a simple chat demo, exchange messages between server and client (Unity app).
+    - Server is created with nodejs. Server code is on `./Assets/WebRTCForUnity/Example/SocketIO/Server~`
     - Requirements
-        - need to run the server to communicate with the app.
         - To run the server, you need to install nodejs.
         - There's several ways to install nodejs, but with Chocolatey on windows, `choco install nodejs` will do it.
         - You need to run `npm install` to install required modules.
